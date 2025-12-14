@@ -1,0 +1,224 @@
+:root {
+  --green-300: hsl(173, 61%, 77%);
+  --green-400: hsl(172, 67%, 45%);
+  --green-900: hsl(183, 100%, 15%);
+  --grey-500: hsl(186, 14%, 43%);
+  --grey-400: hsl(184, 14%, 56%);
+  --grey-200: hsl(185, 41%, 84%);
+  --grey-50: hsl(189, 47%, 97%);
+  --white: hsl(0, 100%, 100%);
+  --red: hsl(4, 100%, 67%);
+
+  --txt-small: 1rem;
+  --txt-large: 1.25rem;
+  --txt-xlarge: clamp(1.5rem, 0.8864rem + 2.7273vw, 3rem);
+}
+
+* {
+  box-sizing: border-box;
+}
+img {
+  display: block;
+  max-width: 100%;
+}
+p {
+  margin-block: 0.5rem;
+}
+
+body {
+  background-color: var(--grey-200);
+  min-height: 100vh;
+  margin: 0;
+
+  font-family: "Space Mono", monospace;
+  font-size: var(--txt-small);
+  color: var(--grey-500);
+  font-weight: 700;
+
+  display: grid;
+  align-content: center;
+}
+header {
+  display: flex;
+  justify-content: center;
+
+  padding: 1.5rem;
+}
+main {
+  background-color: var(--white);
+  border-radius: 15px;
+  padding: 2em;
+  
+  width: 85%;
+  margin: 0 auto;
+  max-width: 1000px;
+
+  @media (min-width: 45em) {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+input[type="number"] {
+  background-color: var(--grey-50);
+  color: var(--green-900);
+
+  border: none;
+  border-radius: 5px;
+  font: inherit;
+  font-size: var(--txt-large);
+  text-align: end;
+  width: 100%;
+  padding-inline: 0.5em;
+
+  &::placeholder {
+    color: var(--grey-400);
+  }
+
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
+
+  &:focus{
+    outline: none;
+    border: var(--green-300) 2px solid;
+  }
+}
+.bill-options{
+  @media (min-width: 45em) {
+    width: 45%;
+  }
+}
+input[type="number"].error-state,
+input[type="number"].error-state:focus {
+  border: var(--red) solid 2px;
+}
+.bill-input {
+  display: block;
+  anchor-name: --bill-input;
+}
+.bill-icon {
+  position: absolute;
+  position-anchor: --bill-input;
+  left: calc(anchor(left) + 10px);
+  top: anchor(center);
+  transform: translateY(-50%);
+}
+.tip-selector {
+  border: none;
+  display: grid;
+  gap: 1.5em;
+  grid-template-columns: repeat(auto-fit, minmax(8em, 1fr));
+  padding: 0;
+  margin-block: 2em;
+}
+input[type="radio"] {
+  appearance: none;
+  margin: 0;
+  position: absolute;
+}
+.tip-option {
+  background-color: var(--green-900);
+  color: var(--white);
+  font-size: var(--txt-large);
+  border-radius: 5px;
+  padding: 0.25em 0;
+  text-align: center;
+
+  &:has(input:checked) {
+    background-color: var(--green-400);
+    color: var(--green-900);
+  }
+
+  &:hover {
+    background-color: var(--green-300);
+    color: var(--green-900);
+  }
+}
+.custom-tip::placeholder {
+  color: var(--grey-500);
+  text-align: center;
+}
+.people-input {
+  display: block;
+  anchor-name: --people-input;
+}
+.people-icon {
+  position: absolute;
+  position-anchor: --people-input;
+  left: calc(anchor(left) + 10px);
+  top: anchor(center);
+  transform: translateY(-50%);
+}
+.error-state {
+  border: 2px var(--red) solid;
+}
+.people-top-txt {
+  display: flex;
+  justify-content: space-between;
+}
+.error-message {
+  color: var(--red);
+}
+.result {
+  background-color: var(--green-900);
+  color: var(--white);
+  border-radius: 15px;
+  padding: 1.5em;
+  margin-block-start: 2em;
+
+  display: grid;
+
+  @media (min-width: 45em) {
+    margin-block-start: 0;
+    width: 45%;
+  }
+}
+.res-txt p {
+  margin: 0;
+}
+.per-person {
+  color: var(--grey-400);
+}
+.result-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.res-value {
+  color: var(--green-400);
+  font-size: var(--txt-xlarge);
+
+  display: flex;
+  align-items: center;
+}
+.bi-currency-dollar {
+  width: 0.9em;
+  height: 0.9em;
+}
+button {
+  background-color: var(--green-400);
+  opacity: 0.4;
+  color: var(--green-900);
+  border-radius: 5px;
+  width: 100%;
+  border: none;
+  font: inherit;
+  font-size: var(--txt-large);
+  text-transform: uppercase;
+  padding: 0.25em 1em;
+  margin-block-start: auto;
+}
+button:enabled {
+  opacity: 1;
+  &:hover {
+    background-color: var(--green-300);
+  }
+}
+
+.attribution {
+  font-size: max(0.6rem, 0.75vw);
+  text-align: center;
+  margin-block: 0.75em;
+}
+.attribution a { color: hsl(228, 45%, 44%); }
