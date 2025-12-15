@@ -1,6 +1,5 @@
 const resetBtn = document.querySelector('button');
 const inputs = document.querySelectorAll('input');
-const form = document.getElementById('bill-form');
 const billInput = document.querySelector('.bill-input');
 const customTip = document.querySelector('.custom-tip');
 const peopleInput = document.querySelector('.people-input');

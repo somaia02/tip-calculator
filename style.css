@@ -51,7 +51,7 @@ main {
   
   width: 85%;
   margin: 0 auto;
-  max-width: 1000px;
+  max-width: 62.5rem;
 
   @media (min-width: 45em) {
     display: flex;
@@ -125,13 +125,13 @@ input[type="radio"] {
   padding: 0.25em 0;
   text-align: center;
 
-  &:has(input:checked) {
-    background-color: var(--green-400);
+  &:hover {
+    background-color: var(--green-300);
     color: var(--green-900);
   }
 
-  &:hover {
-    background-color: var(--green-300);
+  &:has(input:checked) {
+    background-color: var(--green-400);
     color: var(--green-900);
   }
 }
